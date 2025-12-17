@@ -6,7 +6,7 @@ import { Plus, Filter, ArrowUpDown, Edit, Trash } from 'lucide-react';
 
 export default function BlogPostsTable() {
   return (
-    <div className="flex-1 overflow-y-auto px-4 sm:px-8 pb-8 bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-200">
+    <div className="w-full pb-8 bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-200">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
