@@ -53,7 +53,7 @@ export function EditPost() {
 
   return (
     <div className="w-full text-gray-900 dark:text-white">
-      <div className="max-w-[1000px] mx-auto pb-20">
+      <div className="w-full pb-20">
         
         {/* Breadcrumbs & Heading */}
         <div className="mb-6">
@@ -86,10 +86,10 @@ export function EditPost() {
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           
           {/* Left Column (Editor) */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="lg:col-span-3 flex flex-col gap-6">
             
             {/* Main Editor Card */}
             <div className="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
