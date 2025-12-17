@@ -1,4 +1,4 @@
-import { EditPost } from '@/components/EditPost';
+import { EditPost } from '@/components/blog/EditPost';
 import MainLayout from '@/components/MainLayout';
 
 export default function EditPostPage() {

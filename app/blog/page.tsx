@@ -1,5 +1,5 @@
+import BlogPostsTable from '@/components/blog/BlogPostsTable';
 import MainLayout from '@/components/MainLayout';
-import BlogPostsTable from '@/components/BlogPostsTable';
 
 export default function BlogPage() {
   return (

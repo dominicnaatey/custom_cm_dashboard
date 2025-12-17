@@ -1,7 +1,7 @@
+import { CreateBlogPost } from '@/components/blog/CreateBlogPost';
 import MainLayout from '@/components/MainLayout';
-import { CreateBlogPost } from '@/components/CreateBlogPost';
 
-export default function CreateBlogPostPage() {
+export default function CreatePostPage() {
   return (
     <MainLayout>
       <CreateBlogPost />
