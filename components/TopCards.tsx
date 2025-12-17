@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
+import Image from 'next/image';
 
 export const TopCards: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ export const TopCards: React.FC = () => {
       </div>
 
       {/* Upcoming Events Card */}
-      <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-6 text-white shadow-xl shadow-primary/20 relative overflow-hidden min-h-[200px]">
+      <div className="bg-linear-to-br from-primary to-secondary rounded-2xl p-6 text-white shadow-xl shadow-primary/20 relative overflow-hidden min-h-[200px]">
         <div className="absolute -right-6 -top-6 w-24 h-24 rounded-full border-4 border-white/10 pointer-events-none"></div>
         <div className="absolute right-10 top-10 w-12 h-12 rounded-full bg-white/10 blur-md pointer-events-none"></div>
         
@@ -61,8 +62,20 @@ export const TopCards: React.FC = () => {
               <div className="font-mono text-lg">DEC 15</div>
             </div>
             <div className="flex -space-x-2">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA93OdC0GQSBrWIvCbrN3W_6G-wTQIoeuvGzlEVg65eReAoNxctqDd12aQyqn6LA3wXQd0iQIapmMcxkYUZaGBqrJmAEoQO73IH8qW6Ozy_xVUYctYHCiFCfaqH1E88kUrg9vJ-8ojT7QabsvGwuejEopkNO5BE-0MYMCjSSsq6yWCOQntdhxTNEFOdQIBCsdCEUNPfk5-V_GSbcergG77IzqIc62V0BV57NmxwzFm0A58kq6mlfpS_mH71Gz_Dqz_HZ_PVmTXDMg" alt="" className="w-8 h-8 rounded-full border-2 border-primary object-cover" />
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCROhe-SLVlrjFH5MZkSr65JCioY4LmGCFe9anrPF-jezA7LW8A1kt8F3mpB4UeaQLTRw56aT3cc1KYFpoiV24q0ptjIDWVuufRfwo61H8sJSRoRgYMu3qBHbMma30-hAj97btPs-jV-rk2GGolv9cY_Lqwo3_NCRKzNtiekFOfCJ3pzvidqfpEBLZi4Xr_3sVvusVCZSTCiwbUFNbBbDk7Fvt7dXMqbvy9vJR2dFFLRjqdjlD70uEgFPqKlCWj5-26xWaYYKpwMQ" alt="" className="w-8 h-8 rounded-full border-2 border-primary object-cover" />
+              <Image 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA93OdC0GQSBrWIvCbrN3W_6G-wTQIoeuvGzlEVg65eReAoNxctqDd12aQyqn6LA3wXQd0iQIapmMcxkYUZaGBqrJmAEoQO73IH8qW6Ozy_xVUYctYHCiFCfaqH1E88kUrg9vJ-8ojT7QabsvGwuejEopkNO5BE-0MYMCjSSsq6yWCOQntdhxTNEFOdQIBCsdCEUNPfk5-V_GSbcergG77IzqIc62V0BV57NmxwzFm0A58kq6mlfpS_mH71Gz_Dqz_HZ_PVmTXDMg" 
+                alt="User 1" 
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-full border-2 border-primary object-cover" 
+              />
+              <Image 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCROhe-SLVlrjFH5MZkSr65JCioY4LmGCFe9anrPF-jezA7LW8A1kt8F3mpB4UeaQLTRw56aT3cc1KYFpoiV24q0ptjIDWVuufRfwo61H8sJSRoRgYMu3qBHbMma30-hAj97btPs-jV-rk2GGolv9cY_Lqwo3_NCRKzNtiekFOfCJ3pzvidqfpEBLZi4Xr_3sVvusVCZSTCiwbUFNbBbDk7Fvt7dXMqbvy9vJR2dFFLRjqdjlD70uEgFPqKlCWj5-26xWaYYKpwMQ" 
+                alt="User 2" 
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-full border-2 border-primary object-cover" 
+              />
               <div className="w-8 h-8 rounded-full border-2 border-primary bg-white text-primary flex items-center justify-center text-xs font-bold shadow-sm">
                 +42
               </div>

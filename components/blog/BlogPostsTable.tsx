@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Plus, Filter, ArrowUpDown, Edit, Trash } from 'lucide-react';
+import { Plus, Filter, ArrowUpDown, Edit, Trash, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function BlogPostsTable() {
   return (
@@ -165,18 +165,24 @@ export default function BlogPostsTable() {
           </p>
 
           <div className="flex gap-2">
-            {["Previous", "1", "2", "3", "Next"].map((p, i) => (
+            <button className="px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50">
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            {[1, 2, 3].map((page) => (
               <button
-                key={p}
+                key={page}
                 className={`px-3 py-1 rounded-md text-sm ${
-                  i === 1
+                  page === 1
                     ? "bg-primary text-white"
                     : "border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                 }`}
               >
-                {p}
+                {page}
               </button>
             ))}
+            <button className="px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>
