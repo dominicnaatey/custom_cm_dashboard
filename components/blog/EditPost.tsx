@@ -60,7 +60,7 @@ export function EditPost() {
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
             <span className="hover:text-primary cursor-pointer transition-colors">Dashboard</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="hover:text-primary cursor-pointer transition-colors">Blog Posts</span>
+            <span className="hover:text-primary cursor-pointer transition-colors">Posts</span>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-gray-900 dark:text-white font-medium">Edit Post</span>
           </div>

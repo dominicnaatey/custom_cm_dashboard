@@ -4,11 +4,11 @@ import { Calendar } from 'lucide-react';
 export const TopCards: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Total Blog Posts Card */}
+      {/* Total Posts Card */}
       <div className="bg-gray-900 dark:bg-black rounded-2xl p-6 text-white shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[200px]">
         <div className="absolute top-0 right-0 w-32 h-32 bg-gray-800 rounded-full mix-blend-overlay filter blur-2xl opacity-50 transform translate-x-10 -translate-y-10 pointer-events-none"></div>
         <div>
-          <h3 className="text-gray-400 text-sm font-medium mb-1">Total Blog Posts</h3>
+          <h3 className="text-gray-400 text-sm font-medium mb-1">Total Posts</h3>
           <div className="text-3xl font-bold tracking-tight">
             1,248 <span className="text-sm font-normal text-gray-400">All Time</span>
           </div>

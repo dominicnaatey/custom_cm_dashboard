@@ -27,7 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
   
   const navItems = [
     { icon: LayoutDashboard, label: 'Overview', href: '/' },
-    { icon: FileText, label: 'Blog Posts', href: '/blog' },
+    { icon: FileText, label: 'Posts', href: '/blog' },
     { icon: ImageIcon, label: 'Media Gallery', href: '#' },
     { icon: Calendar, label: 'Upcoming Events', href: '#' },
     { icon: Users, label: 'Members & Users', href: '#' },
