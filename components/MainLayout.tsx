@@ -7,6 +7,7 @@ import { Header } from './Header';
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -18,10 +19,16 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   return (
     <div className="flex h-screen overflow-hidden bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans transition-colors duration-200">
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <Sidebar 
+        isOpen={sidebarOpen} 
+        onClose={() => setSidebarOpen(false)} 
+        isCollapsed={isCollapsed}
+        toggleCollapse={toggleCollapse}
+      />
       
       <div className="flex-1 flex flex-col h-screen overflow-hidden relative">
         <Header 
