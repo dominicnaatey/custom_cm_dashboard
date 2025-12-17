@@ -11,7 +11,8 @@ import {
   Settings, 
   LogOut,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  X
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -37,7 +38,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
     <aside className={`
       fixed md:static inset-y-0 left-0 z-30
       ${isCollapsed ? 'md:w-20' : 'md:w-64'} w-64
-      flex-shrink-0 flex flex-col 
+      shrink-0 flex flex-col 
       bg-surface-light dark:bg-surface-dark 
       border-r border-gray-200 dark:border-gray-700 
       transition-all duration-300 ease-in-out
@@ -60,6 +61,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
         >
           {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
+
+        <button 
+          onClick={onClose}
+          className="md:hidden p-1.5 rounded-lg text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
       </div>
 
       <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto overflow-x-hidden">
@@ -79,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
                 ${isCollapsed ? 'justify-center px-2' : ''}
               `}
             >
-              <item.icon className="w-5 h-5 flex-shrink-0" fill={isActive ? "currentColor" : "none"} />
+              <item.icon className="w-5 h-5 shrink-0" fill={isActive ? "currentColor" : "none"} />
               <span className={`font-medium transition-opacity duration-300 ${isCollapsed ? 'hidden opacity-0 w-0' : 'block opacity-100'}`}>
                 {item.label}
               </span>
@@ -99,7 +107,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
             ${isCollapsed ? 'justify-center px-2' : ''}
           `}
         >
-          <LogOut className="w-5 h-5 flex-shrink-0" />
+          <LogOut className="w-5 h-5 shrink-0" />
           <span className={`font-medium transition-opacity duration-300 ${isCollapsed ? 'hidden opacity-0 w-0' : 'block opacity-100'}`}>
             Log Out
           </span>
