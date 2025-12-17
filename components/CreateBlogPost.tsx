@@ -8,7 +8,7 @@ import SidebarSection from './SidebarSection';
 
 export function CreateBlogPost() {
   return (
-    <div className="grow w-full max-w-[1200px] mx-auto p-4 md:p-6 lg:p-8 bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-sans min-h-screen">
+    <div className="grow w-full max-w-[1200px] mx-auto text-gray-900 dark:text-white font-sans">
       {/* Page Action Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
