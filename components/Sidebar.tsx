@@ -81,7 +81,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
               className={`
                 flex items-center gap-3 px-4 py-3 rounded-xl transition-all whitespace-nowrap
                 ${isActive 
-                  ? 'bg-primary/20 text-primary dark:text-white dark:bg-primary' 
+                  ? 'bg-primary/20 text-primary dark:text-primary dark:bg-gray-900' 
                   : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-primary dark:hover:text-primary-light'
                 }
                 ${isCollapsed ? 'justify-center px-2' : ''}
