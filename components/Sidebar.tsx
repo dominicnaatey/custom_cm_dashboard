@@ -1,4 +1,6 @@
 import React from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { 
   LayoutGrid, 
   LayoutDashboard, 
@@ -20,13 +22,15 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, toggleCollapse }) => {
+  const pathname = usePathname();
+  
   const navItems = [
-    { icon: LayoutDashboard, label: 'Overview', active: true },
-    { icon: FileText, label: 'Blog Posts', active: false },
-    { icon: ImageIcon, label: 'Media Gallery', active: false },
-    { icon: Calendar, label: 'Upcoming Events', active: false },
-    { icon: Users, label: 'Members & Users', active: false },
-    { icon: Settings, label: 'Settings', active: false },
+    { icon: LayoutDashboard, label: 'Overview', href: '/' },
+    { icon: FileText, label: 'Blog Posts', href: '/blog' },
+    { icon: ImageIcon, label: 'Media Gallery', href: '#' },
+    { icon: Calendar, label: 'Upcoming Events', href: '#' },
+    { icon: Users, label: 'Members & Users', href: '#' },
+    { icon: Settings, label: 'Settings', href: '#' },
   ];
 
   return (
@@ -59,26 +63,29 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
       </div>
 
       <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto overflow-x-hidden">
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href="#"
-            title={isCollapsed ? item.label : ''}
-            className={`
-              flex items-center gap-3 px-4 py-3 rounded-xl transition-all whitespace-nowrap
-              ${item.active 
-                ? 'bg-primary text-white shadow-lg shadow-primary/30' 
-                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-primary dark:hover:text-primary-light'
-              }
-              ${isCollapsed ? 'justify-center px-2' : ''}
-            `}
-          >
-            <item.icon className="w-5 h-5 flex-shrink-0" />
-            <span className={`font-medium transition-opacity duration-300 ${isCollapsed ? 'hidden opacity-0 w-0' : 'block opacity-100'}`}>
-              {item.label}
-            </span>
-          </a>
-        ))}
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link
+              key={item.label}
+              href={item.href}
+              title={isCollapsed ? item.label : ''}
+              className={`
+                flex items-center gap-3 px-4 py-3 rounded-xl transition-all whitespace-nowrap
+                ${isActive 
+                  ? 'bg-primary text-white shadow-lg shadow-primary/30' 
+                  : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-primary dark:hover:text-primary-light'
+                }
+                ${isCollapsed ? 'justify-center px-2' : ''}
+              `}
+            >
+              <item.icon className="w-5 h-5 flex-shrink-0" fill={isActive ? "currentColor" : "none"} />
+              <span className={`font-medium transition-opacity duration-300 ${isCollapsed ? 'hidden opacity-0 w-0' : 'block opacity-100'}`}>
+                {item.label}
+              </span>
+            </Link>
+          );
+        })}
       </nav>
 
       <div className="p-4 border-t border-gray-100 dark:border-gray-800">
