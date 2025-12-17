@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Plus, Filter, ArrowUpDown, Edit, Trash } from 'lucide-react';
 
 export default function BlogPostsTable() {
@@ -17,10 +18,12 @@ export default function BlogPostsTable() {
           </p>
         </div>
 
-        <button className="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg shadow-lg shadow-primary/30 flex items-center gap-2 transition-all active:scale-95">
-          <Plus className="w-4 h-4" />
-          <span className="text-sm font-medium">Create Post</span>
-        </button>
+        <Link href="/blog/create">
+          <button className="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg shadow-lg shadow-primary/30 flex items-center gap-2 transition-all active:scale-95">
+            <Plus className="w-4 h-4" />
+            <span className="text-sm font-medium">Create Post</span>
+          </button>
+        </Link>
       </div>
 
       {/* Card */}
