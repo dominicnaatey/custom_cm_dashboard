@@ -23,7 +23,7 @@ const SidebarSection: React.FC = () => {
   };
 
   return (
-    <div className="lg:col-span-1 flex flex-col gap-6">
+    <div className="w-full xl:w-80 shrink-0 flex flex-col gap-6">
       {/* Visibility Status Card */}
       <div className="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5">
         <h3 className="text-gray-900 dark:text-white text-sm font-bold mb-4">Visibility</h3>

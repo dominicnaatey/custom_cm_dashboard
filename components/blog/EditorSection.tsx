@@ -24,7 +24,7 @@ const ToolbarButton: React.FC<{ icon: React.ReactNode; title: string; isActive?:
 
 const EditorSection: React.FC = () => {
   return (
-    <div className="lg:col-span-3 flex flex-col gap-6">
+    <div className="flex-1 min-w-0 flex flex-col gap-6">
       {/* Main Editor Card */}
       <div className="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div className="p-6 pb-2">

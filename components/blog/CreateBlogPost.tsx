@@ -35,7 +35,7 @@ export function CreateBlogPost() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div className="flex flex-col xl:flex-row gap-6">
         <EditorSection />
         <SidebarSection />
       </div>
