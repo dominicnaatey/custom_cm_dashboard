@@ -19,7 +19,7 @@ import {
 
 export function CreateBlogPost() {
   return (
-    <div className="flex-grow w-full max-w-[1200px] mx-auto p-4 md:p-6 lg:p-8 bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-sans min-h-screen">
+    <div className="grow w-full max-w-[1200px] mx-auto p-4 md:p-6 lg:p-8 bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-sans min-h-screen">
       {/* Page Action Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
@@ -50,7 +50,7 @@ export function CreateBlogPost() {
         {/* Left Column */}
         <div className="lg:col-span-2 flex flex-col gap-6">
           {/* Editor */}
-          <div className="bg-white dark:bg-[#1e293b] rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 overflow-hidden">
+          <div className="bg-white dark:bg-surface-dark rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 overflow-hidden">
             <div className="p-6 pb-2">
               <label className="block mb-2">
                 <p className="text-sm font-semibold pb-1">Title</p>
@@ -62,7 +62,7 @@ export function CreateBlogPost() {
             </div>
 
             {/* Toolbar */}
-            <div className="px-4 py-2 border-y border-[#f0f2f4] dark:border-gray-700 flex items-center gap-1 bg-[#fcfdfd] dark:bg-[#1e293b]">
+            <div className="px-4 py-2 border-y border-[#f0f2f4] dark:border-gray-700 flex items-center gap-1 bg-[#fcfdfd] dark:bg-surface-dark">
               <button className="p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-[#617589] transition-colors">
                 <Bold className="w-5 h-5" />
               </button>
@@ -109,7 +109,7 @@ export function CreateBlogPost() {
           </div>
 
           {/* Excerpt */}
-          <div className="bg-white dark:bg-[#1e293b] rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-6">
+          <div className="bg-white dark:bg-surface-dark rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-base font-bold">Excerpt</h3>
               <button className="text-primary text-sm font-medium hover:underline">
@@ -129,7 +129,7 @@ export function CreateBlogPost() {
         {/* Right Column */}
         <div className="lg:col-span-1 flex flex-col gap-6">
           {/* Visibility */}
-          <div className="bg-white dark:bg-[#1e293b] rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-5">
+          <div className="bg-white dark:bg-surface-dark rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-5">
             <h3 className="text-sm font-bold mb-4">Visibility</h3>
 
             <label className="flex items-start gap-3 cursor-pointer">
@@ -159,7 +159,7 @@ export function CreateBlogPost() {
           </div>
 
           {/* Featured Media */}
-          <div className="bg-white dark:bg-[#1e293b] rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-5">
+          <div className="bg-white dark:bg-surface-dark rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-5">
             <h3 className="text-sm font-bold mb-3">Featured media</h3>
             <div className="border-2 border-dashed rounded-lg p-6 text-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
               <ImagePlus className="w-7 h-7 mx-auto text-[#617589]" />
@@ -171,7 +171,7 @@ export function CreateBlogPost() {
           </div>
 
           {/* Organization */}
-          <div className="bg-white dark:bg-[#1e293b] rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-5">
+          <div className="bg-white dark:bg-surface-dark rounded-xl shadow border border-[#dbe0e6] dark:border-gray-700 p-5">
             <h3 className="text-sm font-bold mb-4">Organization</h3>
 
             <label className="block mb-4">
