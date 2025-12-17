@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 import { Search, Bell, Moon, Sun, Menu } from 'lucide-react';
 
 interface HeaderProps {
@@ -48,10 +48,12 @@ export const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, toggle
             <div className="text-sm font-semibold text-gray-900 dark:text-white">Alex Morgan</div>
             <div className="text-xs text-gray-500 dark:text-gray-400">Administrator</div>
           </div>
-          <img
+          <Image
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQA_SfK4Zw-L06-vOvWwC32D9q8yB6P9WDlc-OOSWpemmJYUiduKvbuICmRgi8_2-AF_-38qP0QLSVXWQhHgpIH0bjoy24BYETvUN2yVMQ-gGI5bFyqWEqt0jMycHQOHK8NgUKrL5biCiE9Wlk4Ut0FArFUcGmK0AXvez6H0kBdGoFQQUs-Vx1SwmitxJvg8uHP2PW6pB4Qbd_PGnSclpK-VajoBGrULEzR_8kekalHrpMXr5mqcShp3c1NRoJAaKZAiMJDAvtEA"
             alt="Profile"
-            className="h-10 w-10 rounded-full border-2 border-white dark:border-gray-700 object-cover shadow-sm"
+            width={40}
+            height={40}
+            className="rounded-full border-2 border-white dark:border-gray-700 object-cover shadow-sm"
           />
         </div>
       </div>

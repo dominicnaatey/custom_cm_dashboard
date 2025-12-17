@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Activity } from '../types';
 
 const activities: Activity[] = [
@@ -53,10 +54,12 @@ export const ActivityFeed: React.FC = () => {
       <div className="space-y-6">
         {activities.map((item) => (
           <div key={item.id} className={`flex items-start gap-4 ${item.isNew ? 'p-2 -mx-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg' : ''}`}>
-            <img 
+            <Image 
               src={item.user.avatar} 
               alt="User" 
-              className="w-10 h-10 rounded-full border border-gray-100 dark:border-gray-700 object-cover"
+              width={40}
+              height={40}
+              className="rounded-full border border-gray-100 dark:border-gray-700 object-cover"
             />
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{item.user.name}</p>
