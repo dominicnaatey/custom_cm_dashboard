@@ -2,13 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import EditorSection from './EditorSection';
 import SidebarSection from './SidebarSection';
 
 export function CreateBlogPost() {
   return (
-    <div className="grow w-full text-gray-900 dark:text-white font-sans">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="grow w-full text-gray-900 dark:text-white font-sans"
+    >
       {/* Page Action Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
@@ -39,6 +45,6 @@ export function CreateBlogPost() {
         <EditorSection />
         <SidebarSection />
       </div>
-    </div>
+    </motion.div>
   );
 }

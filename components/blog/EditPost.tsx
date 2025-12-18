@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   ChevronRight, 
   Eye, 
@@ -52,7 +53,12 @@ export function EditPost() {
   };
 
   return (
-    <div className="w-full text-gray-900 dark:text-white">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full text-gray-900 dark:text-white"
+    >
       <div className="w-full pb-20">
         
         {/* Breadcrumbs & Heading */}
@@ -237,6 +243,6 @@ export function EditPost() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
