@@ -2,11 +2,17 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Plus, Filter, ArrowUpDown, Edit, Trash, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function BlogPostsTable() {
   return (
-    <div className="w-full pb-8 bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-200">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full pb-8 bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-200"
+    >
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
@@ -27,7 +33,7 @@ export default function BlogPostsTable() {
       </div>
 
       {/* Card */}
-      <div className="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-transparent dark:border-border-dark flex flex-col">
+      <div className="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-transparent dark:border-border-dark flex flex-col overflow-hidden">
         {/* Filters */}
         <div className="p-5 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="bg-gray-100 dark:bg-gray-800 p-1 rounded-lg inline-flex">
@@ -186,6 +192,6 @@ export default function BlogPostsTable() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
