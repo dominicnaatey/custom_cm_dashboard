@@ -29,7 +29,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isCollapsed, 
     { icon: LayoutDashboard, label: 'Overview', href: '/' },
     { icon: FileText, label: 'Posts', href: '/blog' },
     { icon: ImageIcon, label: 'Media Gallery', href: '#' },
-    { icon: Calendar, label: 'Upcoming Events', href: '#' },
+    { icon: Calendar, label: 'Events', href: '#' },
     { icon: Users, label: 'Members & Users', href: '#' },
     { icon: Settings, label: 'Settings', href: '#' },
   ];
