@@ -15,7 +15,6 @@ import {
 import EventCard from '@/components/events/EventCard';
 import { MOCK_EVENTS } from '@/components/events/data';
 import { EventStatus } from '@/components/events/types';
-import MainLayout from '@/components/MainLayout';
 
 export default function EventsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -30,8 +29,7 @@ export default function EventsPage() {
   }, [searchQuery, statusFilter]);
 
   return (
-    <MainLayout>
-      <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6">
         {/* Top Header */}
         <div className="w-full flex flex-col gap-6">
           {/* Breadcrumbs */}
@@ -148,6 +146,5 @@ export default function EventsPage() {
 
         </div>
       </div>
-    </MainLayout>
   );
 }
