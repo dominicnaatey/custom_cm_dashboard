@@ -115,9 +115,8 @@ export default function CreateEventPage() {
       transition={{ duration: 0.5 }}
       className="flex-1 overflow-y-auto px-8 py-6 bg-background-light dark:bg-background-dark"
     >
-      <div className="max-w-[1200px] mx-auto">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <button 
               onClick={onBack}
@@ -147,9 +146,9 @@ export default function CreateEventPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col xl:flex-row gap-6">
           {/* Main Content (Left) */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="flex-1 min-w-0 space-y-6">
             {/* Title & Description */}
             <div className="bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
               <div className="flex justify-between items-center mb-6">
@@ -246,7 +245,7 @@ export default function CreateEventPage() {
           </div>
 
           {/* Sidebar Content (Right) */}
-          <div className="space-y-6">
+          <div className="w-full xl:w-80 shrink-0 space-y-6">
             {/* Status & Visibility */}
             <div className="bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
               <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
@@ -346,7 +345,6 @@ export default function CreateEventPage() {
         </div>
         
         <div className="h-20"></div>
-      </div>
     </motion.div>
   );
 };
