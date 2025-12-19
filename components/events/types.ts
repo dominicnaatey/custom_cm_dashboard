@@ -11,6 +11,14 @@ export enum Visibility {
   Internal = 'Internal'
 }
 
+export enum EventType {
+  Webinar = 'Webinar',
+  Workshop = 'Workshop',
+  Networking = 'Networking',
+  Meetup = 'Meetup',
+  Reveal = 'Reveal'
+}
+
 export interface Event {
   id: string;
   title: string;
@@ -22,5 +30,5 @@ export interface Event {
   attendeeCount: number;
   capacity: number;
   imageUrl: string;
-  type: 'Webinar' | 'Workshop' | 'Meetup' | 'Reveal';
+  type: EventType;
 }

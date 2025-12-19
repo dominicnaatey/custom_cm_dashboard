@@ -16,7 +16,7 @@ import {
   Loader2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Event, EventStatus, Visibility } from '@/components/events/types';
+import { Event, EventStatus, Visibility, EventType } from '@/components/events/types';
 
 export default function CreateEventPage() {
   const router = useRouter();
@@ -27,6 +27,7 @@ export default function CreateEventPage() {
     date: '',
     time: '12:00',
     location: '',
+    type: EventType.Webinar,
     visibility: Visibility.Public,
     status: EventStatus.Scheduled,
   });
@@ -247,6 +248,20 @@ export default function CreateEventPage() {
                 Status & Visibility
               </h3>
               <div className="space-y-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1.5">Event Type</label>
+                  <select 
+                    value={formData.type}
+                    onChange={e => setFormData({...formData, type: e.target.value as EventType})}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  >
+                    <option value={EventType.Webinar}>Webinar</option>
+                    <option value={EventType.Workshop}>Workshop</option>
+                    <option value={EventType.Networking}>Networking</option>
+                    <option value={EventType.Meetup}>Meetup</option>
+                    <option value={EventType.Reveal}>Product Reveal</option>
+                  </select>
+                </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-500 mb-1.5">Initial Status</label>
                   <select 
