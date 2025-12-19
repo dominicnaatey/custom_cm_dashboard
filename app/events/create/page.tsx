@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { 
   ArrowLeft, 
   Sparkles, 
@@ -16,7 +17,7 @@ import {
   Loader2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Event, EventStatus, Visibility, EventType } from '@/components/events/types';
+import { EventStatus, Visibility, EventType } from '@/components/events/types';
 
 export default function CreateEventPage() {
   const router = useRouter();
@@ -46,7 +47,7 @@ export default function CreateEventPage() {
         visibility: Visibility.Public,
         description: "Join us for a day of inspiring talks, networking, and innovation showcasing the latest trends in technology."
       }));
-    } catch (error) {
+    } catch {
       console.error("Failed to fetch AI suggestions");
     } finally {
       setIsGenerating(false);
@@ -213,7 +214,12 @@ export default function CreateEventPage() {
                 >
                   {previewImage ? (
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                      <img src={previewImage} alt="Preview" className="w-full h-full object-cover" />
+                      <Image 
+                        src={previewImage} 
+                        alt="Preview" 
+                        fill
+                        className="object-cover"
+                      />
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                         <p className="text-white font-bold">Change Image</p>
                       </div>
