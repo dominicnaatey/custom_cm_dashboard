@@ -32,3 +32,14 @@ export interface Event {
   imageUrl: string;
   type: EventType;
 }
+
+export interface EventFormData {
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  location: string;
+  type: EventType;
+  visibility: Visibility;
+  status: EventStatus;
+}
