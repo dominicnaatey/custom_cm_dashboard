@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Search, Bell, Moon, Sun, Menu } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeaderProps {
   darkMode: boolean;
@@ -38,9 +39,31 @@ export const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, toggle
         
         <button 
           onClick={toggleDarkMode}
-          className="p-2 text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
+          className="p-2 text-gray-400 hover:text-primary dark:hover:text-white transition-colors overflow-hidden relative w-10 h-10 flex items-center justify-center"
         >
-          {darkMode ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
+          <AnimatePresence mode="wait" initial={false}>
+            {darkMode ? (
+              <motion.div
+                key="sun"
+                initial={{ rotate: -90, scale: 0 }}
+                animate={{ rotate: 0, scale: 1 }}
+                exit={{ rotate: 90, scale: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Sun className="w-6 h-6" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="moon"
+                initial={{ rotate: 90, scale: 0 }}
+                animate={{ rotate: 0, scale: 1 }}
+                exit={{ rotate: -90, scale: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Moon className="w-6 h-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
 
         <div className="flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-gray-700">
