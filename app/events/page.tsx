@@ -50,10 +50,13 @@ export default function EventsPage() {
                 <Share className="w-5 h-5" />
                 Export
               </button>
-              <button className="flex items-center justify-center gap-2 h-10 px-4 bg-primary text-white rounded-lg text-sm font-bold shadow-md shadow-primary/20 hover:bg-primary-dark active:scale-95 transition-all">
+              <Link 
+                href="/events/create"
+                className="flex items-center justify-center gap-2 h-10 px-4 bg-primary text-white rounded-lg text-sm font-bold shadow-md shadow-primary/20 hover:bg-primary-dark active:scale-95 transition-all"
+              >
                 <Plus className="w-5 h-5" />
                 Create event
-              </button>
+              </Link>
             </div>
           </div>
         </div>
