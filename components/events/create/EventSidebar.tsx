@@ -93,16 +93,47 @@ export const EventSidebar: React.FC<EventSidebarProps> = ({ formData, setFormDat
           <MapPin className="w-4 h-4" />
           Location
         </h3>
-        <div>
-          <label className="block text-xs font-medium text-gray-500 mb-1.5">Venue or Link</label>
-          <textarea 
-            rows={2}
-            required
-            value={formData.location}
-            onChange={e => setFormData(prev => ({...prev, location: e.target.value}))}
-            placeholder="San Francisco, CA or Online Meeting Link"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
-          />
+        <div className="space-y-3">
+          <div>
+            <label className="block text-xs font-medium text-gray-500 mb-1.5">Venue or Link</label>
+            <textarea 
+              rows={2}
+              required
+              value={formData.location}
+              onChange={e => setFormData(prev => ({...prev, location: e.target.value}))}
+              placeholder="San Francisco, CA or Online Meeting Link"
+              className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+            />
+          </div>
+
+          {formData.location && !formData.location.toLowerCase().includes('http') && (
+            <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 h-40 bg-gray-50 dark:bg-gray-800">
+               <iframe 
+                 width="100%" 
+                 height="100%" 
+                 frameBorder="0" 
+                 scrolling="no" 
+                 marginHeight={0} 
+                 marginWidth={0} 
+                 src={`https://maps.google.com/maps?q=${encodeURIComponent(formData.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                 title="Location Map"
+                 className="opacity-90 hover:opacity-100 transition-opacity"
+               >
+               </iframe>
+            </div>
+          )}
+          
+          {formData.location && (
+             <a 
+               href={formData.location.toLowerCase().includes('http') ? formData.location : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formData.location)}`}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="text-xs text-primary hover:text-primary-dark font-medium flex items-center gap-1 mt-2"
+             >
+               <MapPin className="w-3 h-3" />
+               {formData.location.toLowerCase().includes('http') ? 'Open Link' : 'Open in Google Maps'}
+             </a>
+          )}
         </div>
       </div>
     </div>
