@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, Calendar, MapPin } from 'lucide-react';
+import { Settings, Calendar, MapPin, Plus, X } from 'lucide-react';
 import { EventFormData, EventStatus, Visibility, EventType } from '@/components/events/types';
 
 interface EventSidebarProps {

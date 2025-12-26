@@ -15,6 +15,7 @@ export default function CreateEventPage() {
     title: '',
     description: '',
     date: '',
+    additionalDates: [],
     time: '12:00',
     location: '',
     type: EventType.Webinar,

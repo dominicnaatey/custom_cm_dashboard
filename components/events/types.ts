@@ -31,12 +31,14 @@ export interface Event {
   capacity: number;
   imageUrl: string;
   type: EventType;
+  additionalDates?: string[];
 }
 
 export interface EventFormData {
   title: string;
   description: string;
   date: string;
+  additionalDates: string[];
   time: string;
   location: string;
   type: EventType;
